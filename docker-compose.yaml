@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+  nginx:
+    image: nginx:mainline-alpine
+    container_name: ar_nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/nginx/localhost/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/www/localhost:/usr/share/nginx/html
+      - ./nginx/ssl/localhost:/ect/nginx/cert
+    # links:
+    #   - janus:ar_janus
+    networks:
+      - arnet
+  janus:
+    image: registry.cn-hangzhou.aliyuncs.com/frank_dev/janus-webrtc-gateway:0.10.3
+    container_name: ar_janus
+    ports:
+      - 8088:8088
+      - 8089:8089
+      - 20000-21000:20000-21000/udp
+    volumes:
+      - ./janus/conf:/usr/local/etc/janus
+      - ./janus/certs:/usr/local/etc/certs
+    networks:
+      - arnet
+
+networks:
+  arnet:
+    external: true
+    name: arnet
+    driver: bridge

@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "9737b545-9627-47a1-b6a0-8f0acb37c9b3",
+		"name": "Janus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取存在的全部流",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"janus\": \"message\",  \t\r\n\t\"body\": {\r\n\t\t\"request\": \"list\",\r\n\t},\r\n\t\"transaction\":\"MNWgla6iggyx\",\r\n    \"session_id\":3854735041255072\r\n}",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}/janus",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"janus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "创建会话",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "关联插件",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
