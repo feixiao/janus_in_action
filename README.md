@@ -15,11 +15,15 @@ docker-compose up
 + EchoTest
 ```shell
 # 基于react的echotest例子
-cd rtc_web_demo
+cd react_demo
 npm install --force
 npm start
 ```
 + VideoRoom
 
 
-
+### 参考资料
++ [《IOS视频播放策略》](https://imququ.com/post/new-video-policies-for-ios10.html)
++ [《获取浏览器信息》](http://www.useragentstring.com/)
++ [《iOS平台WebView终于支持WebRTC》](https://cloud.tencent.com/developer/news/785963)
++ [《ios 微信自带浏览器上webrtc不能正常使用的解决方法》](https://cloud.tencent.com/developer/news/785963)
